@@ -1,25 +1,17 @@
 const {MongoClient} = require('mongodb');
 require('dotenv').config();
 
-async function main(){
-    const uri = process.env.URI;
-    const client = new MongoClient(uri);
-    try {
-        await client.connect();
-        await  listDatabases(client);
-    } catch (e) {
-        console.error(e);
-    } finally {
-        await client.close();
-    }
-}
-
-async function addUser(client){
+async function addUser(){
   const uri = process.env.URI;
-  const client = new MongoClient(uri);
+  const client = new MongoClient(uri, { useUnifiedTopology: true });
+  let email = document.querySelector('#name').value;
+  let password = document.querySelector('#password').value;
+  console.log(email);
   try {
       await client.connect();
-
+      const db = client.db("VHomes");
+      let collection = db.collection('users');
+      await collection.insertOne({email: email, password: password})
   } catch (e) {
       console.error(e);
   } finally {
@@ -27,4 +19,4 @@ async function addUser(client){
   }
 };
 
-main().catch(console.error);
+addUser().catch(console.error);

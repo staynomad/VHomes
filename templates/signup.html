@@ -3,12 +3,11 @@
   <head>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <script src="database.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
     <h2>sign up!</h2>
-    <form action="/action_page.php" method="post" onsubmit="addUser(); return false;">
+    <form action="/signup_success">
       <div class="imgcontainer">
         <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
       </div>
@@ -17,9 +16,9 @@
         <label for="uname"><b>name</b></label>
           <input id="name" type="text" placeholder="enter name" name="name" required>
         <label for="uname"><b>email</b></label>
-          <input id="email" type="text" placeholder="enter email" name="uname" required>
+          <input id="email" type="text" placeholder="enter email" name="email" required>
         <label for="uname"><b>password</b></label>
-          <input id="password" type="password" placeholder="enter password" name="psw" required>
+          <input id="password" type="password" placeholder="enter password" name="password" required>
         <label for="city"><br>select your city: </label>
           <select id="city" name="citys">
               <option value="Tempe, Arizona">Tempe, Arizona</option>
