@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="database.js"></script>
+  </head>
+  <body>
+    <h2>sign up!</h2>
+    <form action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
 
-<h2>sign up!</h2>
-
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>email</b></label>
-    <input type="text" placeholder="enter email" name="uname" required>
-
-    <label for="uname"><b>password</b></label>
-    <input type="password" placeholder="enter password" name="psw" required>
-
-<label for="city"><br>select your city: </label>
-  <select id="city" name="citys">
-    <option value="Tempe, Arizona">Tempe, Arizona</option>
-    <option value="Tuscon, Arizona">Tuscon, Arizona</option>
-  </select>
-<br>
-<br>
-
-    <label>
-      <input type="checkbox" checked="checked" name="host"> host <br>
-      <input type="checkbox" checked="checked" name="guest"> guest
-    </label>
-
-    <button type="submit">sign up</button>
-  </div>
-</form>
-
-</body>
+      <div class="container">
+        <label for="uname"><b>email</b></label>
+        <input type="text" placeholder="enter email" name="uname" required>
+        <label for="uname"><b>password</b></label>
+        <input type="password" placeholder="enter password" name="psw" required>
+        <label for="city"><br>select your city: </label>
+        <select id="city" name="citys">
+        <option value="Tempe, Arizona">Tempe, Arizona</option>
+        <option value="Tuscon, Arizona">Tuscon, Arizona</option>
+        </select>
+        <br><br>
+        <label>
+        <input type="checkbox" checked="checked" name="host"> host <br>
+        <input type="checkbox" checked="checked" name="guest"> guest
+        </label>
+        <button type="submit">sign up</button>
+      </div>
+    </form>
+  </body>
 </html>
