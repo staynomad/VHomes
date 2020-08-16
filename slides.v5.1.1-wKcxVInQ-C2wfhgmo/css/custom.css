@@ -2,6 +2,7 @@
   width:370px;
   float:left;
   align-items: center;
+  margin-left: 20px;
   transition: transform .2s
 }
 
