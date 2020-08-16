@@ -1,0 +1,22 @@
+.location{
+  width:370px;
+  float:left;
+  align-items: center;
+  transition: transform .2s
+}
+
+.location:hover{
+  transform: scale(1.1)
+}
+
+
+.location-left{
+  width:400px;
+  float:left;
+  margin-left: 370px;
+  transition: transform .2s
+}
+
+.location-left:hover{
+  transform: scale(1.1)
+}
