@@ -86,7 +86,7 @@
 
 
 </svg><!-- Navigation -->
-<nav class="side">
+<nav class="side animated">
   <div class="navigation default">
     <ul></ul>
   </div>
@@ -99,7 +99,7 @@
     <div class="right">
       <ul class="menu">
         <li><a href="{{ url_for('contact') }}">contact us</a></li>
-        <li><a href="#">locations</a></li>
+        <li><a href="{{ url_for('locations') }}">locations</a></li>
         <li><a href="/contact">reservations</a></li>
       </ul>
       <a class="button blue rounded small" href="#">sign up</a>
@@ -115,25 +115,23 @@
         <div class="fix-7-12">
           <h1 class="margin-bottom-2 ae-1">questions or concerns?</h1>
           <div class="margin-top-3">
-            <form class="slides-form" action="mailto:vhomesgroup@email.com" autocomplete="off">
-              <button type="submit" class="button blue rounded fromCenter ae-5" name="button">email us</button>
-            </form>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="background" style="background-image:url(static/assets/img/background/reviews.jpg)"></div>
+  <div class="background" style="background-image:url(static/assets/img/background/tempe.jpg)"></div>
 </section>
 
 <!-- Panel Bottom #02 -->
-<nav class="panel bottom forceMobileView">
+<nav class="panel bottom forceMobileView animated">
   <div class="sections desktop">
     <div class="left"></div>
     <div class="center">
       <ul class="menu uppercase">
         <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-        <li><a href="#">Locations</a></li>
+        <li><a href="{{ url_for('locations') }}">Locations</a></li>
         <li><a href="#">Reservations</a></li>
       </ul>
     </div>

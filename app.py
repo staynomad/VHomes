@@ -20,6 +20,10 @@ def home():
 def contact():
     return render_template('contact.html');
 
+@app.route('/locations')
+def locations():
+    return render_template('locations.html');
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html');
