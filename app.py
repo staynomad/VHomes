@@ -9,6 +9,10 @@ URI = os.getenv('URI')
 app = Flask(__name__)
 
 @app.route('/')
+def index():
+    return render_template('home.html');
+
+@app.route('/signup')
 def signup():
     return render_template('signup.html');
 

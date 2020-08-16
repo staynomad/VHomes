@@ -10,9 +10,8 @@
     <meta name="twitter:title" content="Untitled" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <!-- Compressed Styles -->
-    <link href="css/slides.min.css?511351" rel="stylesheet" type="text/css">
-    <link href="css/custom.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/ico" href="assets/img/favicon.ico"
+    <link href="{{ url_for('static', filename='css/slides.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/ico" href="static/assets/img/favicon.ico"
 
     <!-- Fonts and Material Icons -->
     <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Material+Icons&display=swap"/>
@@ -85,9 +84,6 @@
 
   <symbol id="xing" viewBox="0 0 24 24"><path d="M3.647 4.74c-.208 0-.384.073-.472.216-.091.148-.077.338.02.531l2.34 4.051v.02l-3.678 6.49c-.096.191-.091.383 0 .531.088.142.244.236.452.236h3.461c.518 0 .767-.349.944-.669l3.737-6.608-2.38-4.15c-.172-.307-.433-.649-.964-.649h-3.46zm14.542-4.74c-.517 0-.741.326-.927.659l-7.702 13.658 4.918 9.023c.172.307.437.659.967.659h3.457c.208 0 .371-.079.459-.221.092-.148.09-.343-.007-.535l-4.88-8.915v-.023l7.664-13.551c.096-.191.098-.386.007-.534-.088-.142-.252-.221-.46-.221h-3.496z"/></symbol>
 
-  <symbol id="whatsapp" viewBox="0 0 512 512"><path d="M256.064 0h-.128c-141.152 0-255.936 114.816-255.936 256 0 56 18.048 107.904 48.736 150.048l-31.904 95.104 98.4-31.456c40.48 26.816 88.768 42.304 140.832 42.304 141.152 0 255.936-114.848 255.936-256s-114.784-256-255.936-256zm148.96 361.504c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.616-127.456-112.576-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016.16 8.576.288 7.52.32 11.296.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744-3.776 4.352-7.36 7.68-11.136 12.352-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"/></symbol>
-
-  <symbol id="youtube" viewBox="0 0 24 24"><path d="M23.6 6.3c-.3-1.2-1.4-2.2-2.6-2.3-3-.3-6-.3-9-.3s-6 0-9 .3c-1.2.1-2.3 1.1-2.6 2.3-.4 1.8-.4 3.8-.4 5.7 0 1.9 0 3.9.4 5.7.3 1.2 1.4 2.2 2.6 2.3 3 .3 6 .3 9 .3s6 0 9-.3c1.3-.1 2.3-1.1 2.6-2.4.4-1.7.4-3.7.4-5.6 0-1.9 0-3.9-.4-5.7zm-14.1 9v-6.6l6.5 3.3-6.5 3.3z"/></symbol>
 
 </svg><!-- Navigation -->
 <nav class="side ">
@@ -97,7 +93,7 @@
 </nav><!-- Panel Top #01 -->
 <nav class="panel top">
   <div class="sections desktop">
-    <div class="left"><a href="#"><img src="assets/img/logo.jpg" height="50"></a></div>
+    <div class="left"><a href="#"><img src="static/assets/img/logo.jpg" height="50"></a></div>
     <div class="right">
       <ul class="menu">
         <li><a href="#contact">contact us</a></li>
@@ -127,63 +123,7 @@
       </div>
     </div>
   </div>
-  <div class="background" style="background-image:url(assets/img/background/reviews.jpg)"></div>
-</section>
-
-<!-- Locations -->
-<section class="slide fade-6 kenBurns" id="locations">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <h1 class="margin-bottom-2 ae-1">our locations</h1>
-        <div class="location-left">
-          <a href="https://www.airbnb.com/rooms/40110843?source_impression_id=p3_1595048105_dz4TLyq4IxcO0%2BWn&guests=1&adults=1">
-            <p class="large margin-top-3 ae-3"><span class="opacity-8">Tempe, Arizona</span></p>
-            <p class="description ae-3"><span class="opacity-8">Minutes from all main hot spots: Old Town Scottsdale, Tempe Marketplace, Phoenix Airport, and more</span></p>
-          </a>
-        </div>
-        <div class="location">
-          <a href="https://www.airbnb.com/rooms/41964981?source_impression_id=p3_1595048105_dz4TLyq4IxcO0%2BWn&guests=1&adults=1">
-            <p class="large margin-top-3 ae-3"><span class="opacity-8">Tuscon, Arizona</span></p>
-            <p class="description ae-3"><span class="opacity-8">Minutes walk to University of Arizona and downtown Tucson, quiet and chill yet close to the hot spots.</span></p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(assets/img/background/tempe.jpg)"></div>
-</section>
-
-<!-- Reviews -->
-<section class="slide fade-6 kenBurns" id="reviews">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <h1 class="margin-bottom-2 ae-1">guest reviews</h1>
-        <p class="description ae-3"><span class="opacity-8"></span></p>
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(assets/img/background/background.jpg)"></div>
-</section>
-
-<!-- Contact -->
-<section class="slide fade-6 kenBurns" id="contact">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-7-12">
-          <h1 class="margin-bottom-2 ae-1">questions or concerns?</h1>
-          <div class="margin-top-3">
-            <form class="slides-form" action="mailto:vhomesgroup@email.com" autocomplete="off">
-              <button type="submit" class="button blue rounded ae-7 fromCenter" name="button">email us</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="background" style="background-image:url(assets/img/background/landing.jpg)"></div>
+  <div class="background" style="background-image:url(static/assets/img/background/reviews.jpg)"></div>
 </section>
 
 <!-- Panel Bottom #02 -->
@@ -223,8 +163,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Compressed Scripts -->
-    <script src="js/slides.min.js?511351" type="text/javascript"></script>
-    <script src="js/custon.js" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/slides.min.js') }}" type="text/javascript"></script>
 
 </body>
 </html>
