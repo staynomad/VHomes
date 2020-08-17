@@ -47,6 +47,7 @@ def signup_success():
         my_col.insert_one(inputs)
 
     add_to_db(inputs);
+    print(inputs)
     return render_template('signup_success.html')
 
 @app.route('/login')
