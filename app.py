@@ -76,3 +76,6 @@ def login_success():
     else:
         response = 'logged in as ' + email
     return render_template('login_success.html', response=response)
+
+if __name__ == '__main__':
+    app.run()
