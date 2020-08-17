@@ -56,15 +56,15 @@
 				}
 			</style>
 			<div class="container px-xl-0">
-				<form action="/signup_success" class="bg-light mx-auto mw-430 radius10 pt-40 px-50 pb-30">
+				<form action="/signup_success" method="GET" class="bg-light mx-auto mw-430 radius10 pt-40 px-50 pb-30">
 					<h2 class="mb-40 small text-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="0">create an account</h2>
-          <div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
+          <div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="50">
 						<input type="name" name="name" placeholder="your name" class="input border-gray focus-action-1 color-heading placeholder-heading w-full" />
 					</div>
 					<div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="150">
 						<input type="email" name="email" placeholder="your email" class="input border-gray focus-action-1 color-heading placeholder-heading w-full" />
 					</div>
-					<div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="300">
+					<div class="mb-20 input_holder" data-aos-duration="600" data-aos="fade-down" data-aos-delay="250">
 						<input type="password" name="password" placeholder="your password" class="input border-gray focus-action-1 color-heading placeholder-heading w-full" />
 					</div>
 					<div data-aos-duration="600" data-aos="fade-down" data-aos-delay="450">
@@ -78,7 +78,7 @@
 					</div>
 					<div class="mt-25 f-18 medium color-heading text-center" data-aos-duration="600" data-aos="fade-down" data-aos-delay="900">
 						<span class="">already have an account? </span>
-						<a href="{{ url_for('signup') }}" class="link action-1">log in</a>
+						<a href="{{ url_for('login') }}" class="link action-1">log in</a>
 					</div>
 				</form>
 			</div>
@@ -105,11 +105,6 @@
 			</div>
 		</footer>
 
-		<!-- forms alerts -->
-		<div class="alert alert-success alert-dismissible fixed-top alert-form-success" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			Thanks for your message!
-		</div>
 		<div class="alert alert-warning alert-dismissible fixed-top alert-form-check-fields" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			Please, fill in required fields.
