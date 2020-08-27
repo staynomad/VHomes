@@ -70,6 +70,8 @@
   animation-duration: 1.5s;
 }
 
+.green{background:#02B188!important;color:#fff!important}.stroke.button.green,.text-green{color:#02B188!important}.green svg{fill:#fff!important}.stroke.button.green svg,.text-green.button svg{fill:#02B188!important}.stroke.button.green{border-color:#02B188!important}
+
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}

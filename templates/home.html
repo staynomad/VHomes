@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <!-- Compressed Styles -->
     <link href="{{ url_for('static', filename='css/slides.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/ico" href="static/assets/img/favicon.ico">
 
     <!-- Fonts and Material Icons -->
@@ -89,7 +90,7 @@
 <!-- Panel Top #01 -->
 <nav class="panel top">
   <div class="sections desktop">
-    <div class="button left rounded small"><a href="{{ url_for('home') }}"><img src="static/assets/img/vhomes.jpg" height="50"></a></div>
+    <div class="left rounded small"><a href="{{ url_for('home') }}"><img src="static/assets/img/vhomes.png" height="50"></a></div>
     <div class="right">
       <ul class="menu">
         <li><a href="{{ url_for('contact') }}">contact us</a></li>
