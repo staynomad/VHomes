@@ -25,7 +25,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #1E0E62;
+  color: #31473b;
   -webkit-font-smoothing: antialiased;
 }
 body.dev {
@@ -79,7 +79,7 @@ input, textarea {
   border: 0;
   outline: none;
   background: transparent;
-  color: #1E0E62;
+  color: #31473b;
   resize: none;
 }
 
