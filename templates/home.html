@@ -116,7 +116,7 @@
       <ul class="menu uppercase">'
         <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
         <li><a href="{{ url_for('locations') }}">locations</a></li>
-        <li><a href="#">services</a></li>
+        <li><a href="{{ url_for('services') }}">services</a></li>
       </ul>
     </div>
     <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
@@ -130,7 +130,7 @@
 <div class="dropdown share bottom right" data-dropdown-id="2" data-text="Take a look at this" data-url="https://designmodo.com" data-pinterest-image="https://designmodo.com/wp-content/uploads/2015/10/Presentation.jpg">
   <div class="center padding-2">
     <div class="title">Share</div>
-    <a href="#">Contact us</a>
+    <a href="{{ url_for('contact') }}">Contact us</a>
   </div>
   <ul>
     <li class="social-facebook"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb-like"></use></svg></li>
