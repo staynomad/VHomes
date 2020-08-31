@@ -61,7 +61,7 @@
 				<div class="row justify-content-center">
 					<div class="col-xl-8 col-lg-10">
 						<h2 class="small" data-aos-duration="500" data-aos="fade-down" data-aos-delay="0">questions or concerns?</h2>
-						<form action="form-handler.php" method="post" class="mt-50">
+						<form action="{{ url_for('static', filename='form-handler.php') }}" method="post" class="mt-50">
 							<div class="row">
 								<div class="col-sm-6" data-aos-duration="500" data-aos="fade-down" data-aos-delay="250">
 									<input type="text" name="name" placeholder="your name" required="required" class="input mb-30 w-full border-transparent-white focus-white color-white placeholder-transparent-white text-center text-sm-left" />
