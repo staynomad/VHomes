@@ -24,6 +24,10 @@ def contact():
 def locations():
     return render_template('locations.html');
 
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
 @app.route('/signup')
 def signup():
     return render_template('signup.html');
