@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from dotenv import load_dotenv
 import os
 import pymongo
@@ -77,7 +77,7 @@ def login_success():
 
     if get_from_db(email, password) == None:
         response = 'incorrect username or password'
-        return redirect(url_for('login'))
+        return render_template('login_unsuccessful.html', response=response)
     else:
         response = 'logged in as ' + email
         return render_template('login_success.html', response=response)
