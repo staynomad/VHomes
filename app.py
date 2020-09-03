@@ -7,8 +7,8 @@ import aes
 
 
 load_dotenv()
-URI = os.getenv('URI')
-KEY = os.getenv('KEY')
+URI = 'mongodb+srv://vhomesgroup:vhomes2019@cluster0.rmikc.mongodb.net/VHomes?retryWrites=true&w=majority'
+KEY = 'YpzUpPSQd3NSmz1b'
 cipher = aes.AESCipher(KEY)
 app = Flask(__name__)
 
