@@ -8,6 +8,7 @@ import aes
 load_dotenv()
 URI = os.getenv('URI')
 KEY = os.getenv('KEY')
+cipher = aes.AESCipher(KEY)
 app = Flask(__name__)
 
 @app.route('/')
@@ -40,7 +41,7 @@ def signup_success():
     email = request.args.get('email')
     password = request.args.get('password')
 
-    enc_pass = AESCipher(KEY).encrypt(password)
+    enc_pass = cipher.encrypt(password)
 
     inputs = {
         'name': name,
@@ -55,7 +56,6 @@ def signup_success():
         my_col.insert_one(inputs)
 
     add_to_db(inputs);
-    print(inputs)
     return render_template('signup_success.html')
 
 @app.route('/login')
@@ -76,7 +76,10 @@ def login_success():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['VHomes']
         my_col = my_db['users']
-        user = my_col.find_one({'email': str(email), 'password': str(password)})
+        enc_pass = my_col.find_one({'email': str(email)})
+        dec_pass = cipher.decrypt(str(enc_pass['password']))
+        user = my_col.find_one({'email': str(email), 'password': str(dec_pass)})
+        print(dec_pass)
         return(user)
 
     if get_from_db(email, password) == None:
