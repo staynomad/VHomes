@@ -76,13 +76,14 @@ def login_success():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['VHomes']
         my_col = my_db['users']
-        enc_pass = my_col.find_one({'email': str(email)})
-        dec_pass = cipher.decrypt(str(enc_pass['password']))
-        user = my_col.find_one({'email': str(email), 'password': str(dec_pass)})
-        print(dec_pass)
-        return(user)
+        user = my_col.find_one({'email': str(email)})
+        dec_pass = cipher.decrypt(str(user['password']))
+        if str(user['email']) == email and dec_pass == password:
+            return True
+        else:
+            return False
 
-    if get_from_db(email, password) == None:
+    if get_from_db(email, password) == False:
         response = 'incorrect username or password'
         return render_template('login_unsuccessful.html', response=response)
     else:
