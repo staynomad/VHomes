@@ -73,10 +73,10 @@ def signup_success():
     if check_db(email) == None:
         add_to_db(inputs)
         response = 'sign up successful!'
-        return render_template('signup_unsuccessful.html', response=response)
+        return render_template('signup_success.html', response=response)
     else:
         response = 'email already registered'
-        return render_template('signup_success.html', response=response)
+        return render_template('signup_unsuccessful.html', response=response)
 
 
 @app.route('/login')
