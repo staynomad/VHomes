@@ -2,6 +2,7 @@ import hashlib
 from Crypto import Random
 from Crypto.Cipher import AES
 from base64 import b64encode, b64decode
+import random, string
 
 class AESCipher(object):
     def __init__(self, key):
@@ -33,3 +34,7 @@ class AESCipher(object):
     def __unpad(plain_text):
         last_character = plain_text[len(plain_text) - 1:]
         return plain_text[:-ord(last_character)]
+
+def random_key():
+    x = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
+    return x

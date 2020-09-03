@@ -7,6 +7,7 @@ import aes
 
 load_dotenv()
 URI = os.getenv('URI')
+KEY = os.getenv('KEY')
 app = Flask(__name__)
 
 @app.route('/')
@@ -39,10 +40,12 @@ def signup_success():
     email = request.args.get('email')
     password = request.args.get('password')
 
+    enc_pass = AESCipher(KEY).encrypt(password)
+
     inputs = {
         'name': name,
         'email': email,
-        'password': password
+        'password': enc_pass
     }
 
     def add_to_db(inputs):
