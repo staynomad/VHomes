@@ -81,7 +81,7 @@
         <li><a href="{{ url_for('locations') }}">locations</a></li>
         <li><a href="{{ url_for('services') }}">services</a></li>
       </ul>
-      <a class="button green rounded small" href="{{ url_for('signup') }}">sign up</a>
+      <a class="button green rounded small" href="{{ url_for('signup') }}">{% if logged_in %} profile {% else %} sign up {% endif %}</a>
     </div>
   </div>
 </nav>

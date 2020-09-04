@@ -15,17 +15,17 @@ cipher = aes.AESCipher(KEY)
 
 @app.route('/')
 def index():
-    return render_template('home.html');
+    return render_template('home.html', logged_in=session.get('logged_in'));
 
 
 @app.route('/home')
 def home():
-    return render_template('home.html');
+    return render_template('home.html', logged_in=session.get('logged_in'));
 
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html');
+    return render_template('contact.html', logged_in=session.get('logged_in'));
 
 
 @app.route('/locations')
@@ -35,12 +35,12 @@ def locations():
 
 @app.route('/services')
 def services():
-    return render_template('services.html')
+    return render_template('services.html', logged_in=session.get('logged_in'))
 
 
 @app.route('/signup')
 def signup():
-    return render_template('signup.html');
+    return render_template('signup.html', logged_in=session.get('logged_in'));
 
 
 @app.route('/signup_success')
@@ -83,7 +83,7 @@ def signup_success():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('login.html', logged_in=session.get('logged_in'))
 
 
 @app.route('/login_success')
