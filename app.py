@@ -8,6 +8,7 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
+
 URI = 'mongodb+srv://vhomesgroup:vhomes2019@cluster0.rmikc.mongodb.net/VHomes?retryWrites=true&w=majority'
 KEY = 'YpzUpPSQd3NSmz1b'
 cipher = aes.AESCipher(KEY)
@@ -15,6 +16,7 @@ cipher = aes.AESCipher(KEY)
 
 @app.route('/')
 def index():
+    session['logged_in'] = False
     return render_template('home.html', logged_in=session.get('logged_in'));
 
 
