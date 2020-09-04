@@ -1,19 +1,16 @@
-from flask import Flask, render_template, request, redirect, url_for
-from flask_session import Session
+from flask import Flask, render_template, request, redirect, session
 import pymongo
 import dns
 import aes
 
 
+app = Flask(__name__)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+
 URI = 'mongodb+srv://vhomesgroup:vhomes2019@cluster0.rmikc.mongodb.net/VHomes?retryWrites=true&w=majority'
 KEY = 'YpzUpPSQd3NSmz1b'
 cipher = aes.AESCipher(KEY)
-
-
-app = Flask(__name__)
-SESSION_TYPE = 'filesystem'
-app.config.from_object(__name__)
-Session(app)
 
 
 @app.route('/')
@@ -33,7 +30,6 @@ def contact():
 
 @app.route('/locations')
 def locations():
-    print(session.get('logged_in'))
     return render_template('locations.html', logged_in=session.get('logged_in'));
 
 
