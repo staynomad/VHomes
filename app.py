@@ -1,16 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for
-from dotenv import load_dotenv
-import os
+from flask_session import Session
 import pymongo
 import dns
 import aes
 
 
-load_dotenv()
 URI = 'mongodb+srv://vhomesgroup:vhomes2019@cluster0.rmikc.mongodb.net/VHomes?retryWrites=true&w=majority'
 KEY = 'YpzUpPSQd3NSmz1b'
 cipher = aes.AESCipher(KEY)
+
+
 app = Flask(__name__)
+SESSION_TYPE = 'filesystem'
+app.config.from_object(__name__)
+Session(app)
 
 
 @app.route('/')
@@ -30,7 +33,8 @@ def contact():
 
 @app.route('/locations')
 def locations():
-    return render_template('locations.html');
+    print(session.get('logged_in'))
+    return render_template('locations.html', logged_in=session.get('logged_in'));
 
 
 @app.route('/services')
@@ -73,9 +77,11 @@ def signup_success():
     if check_db(email) == None:
         add_to_db(inputs)
         response = 'sign up successful!'
+        session['logged_in'] = True
         return render_template('signup_success.html', response=response)
     else:
         response = 'email already registered'
+        session['logged_in'] = False
         return render_template('signup_unsuccessful.html', response=response)
 
 
@@ -107,9 +113,11 @@ def login_success():
 
     if get_from_db(email, password) == False:
         response = 'incorrect username or password'
+        session['logged_in'] = False
         return render_template('login_unsuccessful.html', response=response)
     else:
         response = 'logged in as ' + email
+        session['logged_in'] = True
         return render_template('login_success.html', response=response)
 
 
