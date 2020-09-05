@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, session
+from boto.s3.connection import S3Connection
 import pymongo
 import dns
 import aes
 
-
+s3 = S3Connection(os.environ['KEY'], os.environ['URI'], os.environ['CIPHER'])
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
