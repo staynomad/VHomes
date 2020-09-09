@@ -22,6 +22,10 @@ def index():
 def home():
     return render_template('home.html', logged_in=session.get('logged_in'));
 
+@app.route('/logout')
+def logout():
+    session['logged_in'] = False
+    return render_template('home.html', logged_in=session.get('logged_in'));
 
 @app.route('/contact')
 def contact():
