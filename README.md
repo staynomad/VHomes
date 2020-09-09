@@ -1,2 +1,2 @@
 # VHomes
-Flask app for VHomes website
+Click [here]() to view!
