@@ -78,11 +78,11 @@ def signup_success():
         add_to_db(inputs)
         response = 'sign up successful!'
         session['logged_in'] = True
-        return render_template('signup_success.html', response=response)
+        return render_template('signup_success.html', response=response, logged_in=session.get('logged_in'))
     else:
         response = 'email already registered'
         session['logged_in'] = False
-        return render_template('signup_unsuccessful.html', response=response)
+        return render_template('signup_unsuccessful.html', response=response, logged_in=session.get('logged_in'))
 
 
 @app.route('/login')
@@ -114,12 +114,15 @@ def login_success():
     if get_from_db(email, password) == False:
         response = 'incorrect username or password'
         session['logged_in'] = False
-        return render_template('login_unsuccessful.html', response=response)
+        return render_template('login_unsuccessful.html', response=response, logged_in=session.get('logged_in'))
     else:
         response = 'logged in as ' + email
         session['logged_in'] = True
-        return render_template('login_success.html', response=response)
+        return render_template('login_success.html', response=response, logged_in=session.get('logged_in'))
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html', logged_in=session.get('logged_in'))
 
 if __name__ == '__main__':
     app.run()
